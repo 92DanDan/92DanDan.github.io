@@ -10,7 +10,21 @@
   <div class="container">
     <h1>欢迎来到倪佳炜与杨纯的主页 ❤️</h1>
     <p id="greeting"></p>
+    
+    <!-- 纪念日跳转按钮 -->
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="countdown.html" class="btn">查看我们的纪念日倒计时</a>
+    </div>
   </div>
-  <script src="script.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let username = prompt("您的用户名是:");
+      if (!username) username = "匿名用户";
+
+      const greeting = document.getElementById("greeting");
+      greeting.textContent = `您好，${username}！很高兴您来访。`;
+    });
+  </script>
 </body>
 </html>
