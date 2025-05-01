@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>藏宝页</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .chest-container {
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    .chest-img {
+      max-width: 300px;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 24px;
+      color: #d94f4f;
+      font-weight: bold;
+    }
+
+    .open-btn {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: #ffcccc;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .open-btn:hover {
+      background-color: #ffaaaa;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="nav-item">主页</a>
+    <a href="pet.html" class="nav-item">宠物页</a>
+    <a href="treasure.html" class="nav-item">藏宝页</a>
+  </nav>
+
+  <div class="chest-container">
+    <h1>打开神秘宝箱 🧰</h1>
+    <img src="Big_Chest.png" alt="宝箱" class="chest-img">
+    <div>
+      <button class="open-btn" onclick="openChest()">打开宝箱</button>
+    </div>
+    <div class="result" id="resultDisplay"></div>
+  </div>
+
+  <script>
+    function openChest() {
+      const resultElement = document.getElementById("resultDisplay");
+      const rand = Math.random();
+
+      if (rand < 1 / 1024) {
+        resultElement.textContent = "💎 你获得了 1 颗钻石！";
+      } else if (rand < 1 / 1024 + 1 / 516) {
+        resultElement.textContent = "🪙 你获得了 1 枚金币！";
+      } else if (rand < 1 / 1024 + 1 / 516 + 1 / 256) {
+        resultElement.textContent = "🥈 你获得了 1 枚银币！";
+      } else if (rand < 1 / 1024 + 1 / 516 + 1 / 256 + 1 / 128) {
+        resultElement.textContent = "🥉 你获得了 1 枚铜币！";
+      } else {
+        resultElement.textContent = "🪹 空空如也~";
+      }
+    }
+  </script>
+</body>
+</html>
