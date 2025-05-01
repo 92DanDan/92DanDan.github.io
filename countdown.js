@@ -26,9 +26,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const anniversary = getNextDate(7, 26);
 
   document.getElementById("birthday-njw").textContent =
-    `距离倪佳炜生日还有 ${formatCountdown(njwBirthday)}`;
+    `距离小蛋生日还有 ${formatCountdown(njwBirthday)}`;
   document.getElementById("birthday-yc").textContent =
-    `距离杨纯生日还有 ${formatCountdown(ycBirthday)}`;
+    `距离小咩生日还有 ${formatCountdown(ycBirthday)}`;
   document.getElementById("anniversary").textContent =
     `距离纪念日还有 ${formatCountdown(anniversary)}`;
 });
