@@ -75,3 +75,44 @@ h1 {
   font-size: 16px;
   color: #333;
 }
+
+/*日历*/
+#calendar-container {
+  margin-top: 40px;
+}
+
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.calendar-table th,
+.calendar-table td {
+  border: 1px solid #ddd;
+  text-align: center;
+  padding: 10px;
+  height: 60px;
+  position: relative;
+}
+
+.event-day {
+  background-color: #fff0f3;
+  color: #d94f4f;
+  font-weight: bold;
+}
+
+.event-label {
+  font-size: 12px;
+  margin-top: 5px;
+  color: #a33;
+}
+
+.event-day span {
+  display: block;
+  font-size: 18px;
+}
+
+
+
