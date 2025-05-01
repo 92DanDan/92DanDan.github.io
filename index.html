@@ -21,7 +21,73 @@
     </div>
 
     
+    <!-- 📅 日历容器 -->
+    <div id="calendar-container">
+      <h2 style="text-align:center;">本月日历</h2>
+      <div id="calendar"></div>
+    </div>
   </div>
+
+  <script>
+    // 🎯 纪念日数组 [月(0-11), 日, 标记]
+    const events = [
+      [6, 23, "🎂 倪佳炜生日"],
+      [6, 26, "💕 纪念日"],
+      [8, 16, "🎂 杨纯生日"]
+    ];
+
+    function generateCalendar() {
+      const today = new Date();
+      const month = today.getMonth();
+      const year = today.getFullYear();
+
+      const firstDay = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+      const calendar = document.getElementById("calendar");
+      calendar.innerHTML = ""; // 清空
+
+      const table = document.createElement("table");
+      table.classList.add("calendar-table");
+
+      const headerRow = document.createElement("tr");
+      ["日","一","二","三","四","五","六"].forEach(day => {
+        const th = document.createElement("th");
+        th.textContent = day;
+        headerRow.appendChild(th);
+      });
+      table.appendChild(headerRow);
+
+      let date = 1;
+      for (let i = 0; i < 6; i++) {
+        const row = document.createElement("tr");
+        for (let j = 0; j < 7; j++) {
+          const cell = document.createElement("td");
+          if (i === 0 && j < firstDay) {
+            cell.textContent = "";
+          } else if (date > daysInMonth) {
+            cell.textContent = "";
+          } else {
+            cell.textContent = date;
+
+            // 检查是否是纪念日
+            for (let [m, d, label] of events) {
+              if (m === month && d === date) {
+                cell.classList.add("event-day");
+                cell.title = label;
+                cell.innerHTML = `<span>${date}</span><div class="event-label">${label}</div>`;
+              }
+            }
+            date++;
+          }
+          row.appendChild(cell);
+        }
+        table.appendChild(row);
+        if (date > daysInMonth) break;
+      }
+      calendar.appendChild(table);
+    }
+  </script>
 
 
 </body>
