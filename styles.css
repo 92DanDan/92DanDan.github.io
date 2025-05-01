@@ -114,5 +114,28 @@ h1 {
   font-size: 18px;
 }
 
+/* 导航栏 */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffeaea;
+  padding: 10px 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  gap: 20px;
+  z-index: 1000;
+}
 
+.nav-item {
+  text-decoration: none;
+  color: #d94f4f;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.nav-item:hover {
+  color: #a33;
+}
 
