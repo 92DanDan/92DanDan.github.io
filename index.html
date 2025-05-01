@@ -29,7 +29,11 @@
   </div>
 
   <script>
-    generateCalendar(); // 生成日历
+    // 用户名提示
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("greeting").textContent = `您好！很高兴您来访。`;
+      generateCalendar(); // 生成日历
+    });
     
     // 🎯 纪念日数组 [月(0-11), 日, 标记]
     const events = [
