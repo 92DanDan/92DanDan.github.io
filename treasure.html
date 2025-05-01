@@ -57,14 +57,18 @@
     function openChest() {
       const resultElement = document.getElementById("resultDisplay");
       const rand = Math.random();
-
+    
       if (rand < 1 / 1024) {
+        alert("你获得了一个物品！");
         resultElement.textContent = "💎 你获得了 1 颗钻石！";
       } else if (rand < 1 / 1024 + 1 / 516) {
+        alert("你获得了一个物品！");
         resultElement.textContent = "🪙 你获得了 1 枚金币！";
       } else if (rand < 1 / 1024 + 1 / 516 + 1 / 256) {
+        alert("你获得了一个物品！");
         resultElement.textContent = "🥈 你获得了 1 枚银币！";
       } else if (rand < 1 / 1024 + 1 / 516 + 1 / 256 + 1 / 128) {
+        alert("你获得了一个物品！");
         resultElement.textContent = "🥉 你获得了 1 枚铜币！";
       } else {
         resultElement.textContent = "🪹 空空如也~";
