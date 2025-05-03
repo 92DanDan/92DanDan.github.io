@@ -63,39 +63,24 @@
   </div>
 
   <script>
-    async function openChest() {
+    function openChest() {
       const resultElement = document.getElementById("resultDisplay");
       const rand = Math.random();
-      let reward = null;
-
+    
       if (rand < 1 / 1024) {
-        reward = "diamond";
+        alert("你获得了一个物品！");
         resultElement.textContent = "💎 你获得了 1 颗钻石！";
       } else if (rand < 1 / 1024 + 1 / 516) {
-        reward = "gold";
+        alert("你获得了一个物品！");
         resultElement.textContent = "🪙 你获得了 1 枚金币！";
       } else if (rand < 1 / 1024 + 1 / 516 + 1 / 256) {
-        reward = "silver";
+        alert("你获得了一个物品！");
         resultElement.textContent = "🥈 你获得了 1 枚银币！";
       } else if (rand < 1 / 1024 + 1 / 516 + 1 / 256 + 1 / 128) {
-        reward = "bronze";
+        alert("你获得了一个物品！");
         resultElement.textContent = "🥉 你获得了 1 枚铜币！";
       } else {
         resultElement.textContent = "🪹 空空如也~";
-        return;
-      }
-
-      alert("你获得了一个物品！");
-
-      const characterId = prompt("请选择将物品添加给哪位角色？\n1：土司小咩\n2：荷包小蛋");
-      if (characterId === "1" || characterId === "2") {
-        await fetch("http://localhost:3000/api/update", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ id: characterId, currency: reward })
-        });
-      } else {
-        alert("无效的角色编号，奖励未保存。");
       }
     }
   </script>
