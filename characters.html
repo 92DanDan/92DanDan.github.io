@@ -3,21 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>角色页</title>
+  <link rel="stylesheet" href="styles.css">
   <style>
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: #f7dada;
-      padding: 10px;
-      text-align: center;
-    }
-    .nav-item {
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      color: #333;
-    }
     .character-container {
       margin-top: 100px;
       display: flex;
@@ -25,6 +12,7 @@
       gap: 50px;
       flex-wrap: wrap;
     }
+
     .character-card {
       background: #fff3f3;
       border-radius: 16px;
@@ -33,14 +21,25 @@
       width: 280px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
+
     .character-card img {
       max-width: 100%;
       border-radius: 12px;
     }
+
     .currency {
       margin-top: 10px;
       font-size: 16px;
       text-align: left;
+    }
+
+    .currency span {
+      display: block;
+      margin: 5px 0;
+    }
+
+    .currency-icon {
+      margin-right: 8px;
     }
   </style>
 </head>
@@ -52,33 +51,30 @@
     <a href="characters.html" class="nav-item">角色页</a>
   </nav>
 
-  <div class="character-container" id="characterContainer"></div>
+  <div class="character-container">
+    <!-- 土司小咩 -->
+    <div class="character-card">
+      <img src="character1.jpg" alt="土司小咩">
+      <h2>土司小咩</h2>
+      <div class="currency">
+        <span>🥉 铜币: <strong>0</strong></span>
+        <span>🥈 银币: <strong>0</strong></span>
+        <span>🪙 金币: <strong>0</strong></span>
+        <span>💎 钻石: <strong>0</strong></span>
+      </div>
+    </div>
 
-  <script>
-    async function loadCharacters() {
-      const response = await fetch("http://localhost:3000/api/characters");
-      const data = await response.json();
-
-      const container = document.getElementById("characterContainer");
-      container.innerHTML = "";
-
-      for (const id in data) {
-        const char = data[id];
-        container.innerHTML += `
-          <div class="character-card">
-            <img src="character${id}.jpg" alt="${char.name}">
-            <h2>${char.name}</h2>
-            <div class="currency">
-              <div>🥉 铜币: ${char.bronze}</div>
-              <div>🥈 银币: ${char.silver}</div>
-              <div>🪙 金币: ${char.gold}</div>
-              <div>💎 钻石: ${char.diamond}</div>
-            </div>
-          </div>`;
-      }
-    }
-
-    loadCharacters();
-  </script>
+    <!-- 荷包小单 -->
+    <div class="character-card">
+      <img src="character2.jpg" alt="荷包小单">
+      <h2>荷包小单</h2>
+      <div class="currency">
+        <span>🥉 铜币: <strong>0</strong></span>
+        <span>🥈 银币: <strong>0</strong></span>
+        <span>🪙 金币: <strong>0</strong></span>
+        <span>💎 钻石: <strong>0</strong></span>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
